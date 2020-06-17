@@ -8,11 +8,15 @@ public class Main {
         typek.lastName = "byku";
 
         Animal dog = new Animal("owczarek");
+
         Car merc = new Car();
         merc.model = "AMG";
         merc.producer = "Mercedes";
         merc.year = "2012";
         typek.auto = merc;
+
+        typek.setSalary(22323);
+        typek.getSalary();
 
     }
 }
