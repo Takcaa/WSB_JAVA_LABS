@@ -6,6 +6,8 @@ public class Main {
         Human typek = new Human();
         typek.firstName = "Marcin";
         typek.lastName = "byku";
+        typek.setSalary(22323);
+        typek.getSalary();
 
         Animal dog = new Animal("owczarek");
 
@@ -13,10 +15,17 @@ public class Main {
         merc.model = "AMG";
         merc.producer = "Mercedes";
         merc.year = "2012";
-        typek.auto = merc;
+        merc.value = 2138;
 
-        typek.setSalary(22323);
-        typek.getSalary();
+        Car merc2 = new Car();
+        merc2.model = "AMGaa";
+        merc2.producer = "Mercedes";
+        merc2.year = "2012";
+        merc2.value = 413800;
+
+        typek.setCar(merc);
+        typek.setCar(merc2);
+
 
     }
 }

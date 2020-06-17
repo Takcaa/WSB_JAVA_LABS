@@ -9,7 +9,7 @@ public class Human {
     public String lastName;
     protected Phone phone;
     public Animal pet;
-    public Car auto;
+    private Car auto;
     private double salary;
 
     public void getSalary() {
@@ -24,6 +24,22 @@ public class Human {
             System.out.println("Konieczność odebrania aneksu do umowy od pani Hani z kadr");
             System.out.println(" ZUS i US już wiedzą o zmianie wypłaty i nie ma sensu ukrywać dochodu");
             this.salary = newSalary;
+        }
+    }
+
+    public Car getCar() {
+        return this.auto;
+    }
+
+    public void setCar(Car newAuto) {
+        if (salary > newAuto.value) {
+            System.out.println("Za gotowke bogaczu");
+            this.auto = newAuto;
+        } else if (salary > newAuto.value / 12) {
+            System.out.println("Kredycik na auto");
+            this.auto = newAuto;
+        } else {
+            System.out.println("Zmien kredyt wez prace");
         }
     }
 }
