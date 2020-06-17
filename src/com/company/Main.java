@@ -8,27 +8,11 @@ public class Main {
         typek.lastName = "byku";
 
         Animal dog = new Animal("owczarek");
-        typek.pet = dog;
-        typek.pet.feed();
-        typek.pet.feed();
-        typek.pet.feed();
-        typek.pet.feed();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.takeForAWalk();
-        typek.pet.feed();
+        Car merc = new Car();
+        merc.model = "AMG";
+        merc.producer = "Mercedes";
+        merc.year = "2012";
+        typek.auto = merc;
 
     }
 }

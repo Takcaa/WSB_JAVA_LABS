@@ -1,8 +1,8 @@
 package com.company;
 
 public class Phone {
-    String producer;
-    String model;
+    public String producer;
+    public String model;
     String screenSize;
     String os;
 }

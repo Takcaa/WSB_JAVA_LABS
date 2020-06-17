@@ -5,8 +5,8 @@ import java.io.File;
 public class Animal {
     final String species;
     private Double weight;
-    String name;
-    File pic;
+    public String name;
+    public File pic;
 
     static final Double DEFAULT_WEIGHT = 10.0;
 
