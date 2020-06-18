@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.devices.Car;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -17,14 +19,19 @@ public class Main {
         merc.year = "2012";
         merc.value = 2138;
 
-        Car merc2 = new Car();
-        merc2.model = "AMGaa";
-        merc2.producer = "Mercedes";
-        merc2.year = "2012";
-        merc2.value = 413800;
+        Car mercPrim = new Car();
+        mercPrim.model = "AMG";
+        mercPrim.producer = "Mercedes";
+        mercPrim.year = "2012";
+        mercPrim.value = 2138;
 
         typek.setCar(merc);
-        typek.setCar(merc2);
+        typek.setCar(mercPrim);
+
+        System.out.println(mercPrim);
+        System.out.println(merc);
+        System.out.println(typek);
+        System.out.println(dog);
 
 
     }
