@@ -1,18 +1,11 @@
 package com.company.devices;
 
-public class Car {
-    public String model;
-    public String producer;
-    public String year;
+public class Car extends Device {
     public double value;
 
+
     @Override
-    public String toString() {
-        return "Car{" +
-                "model='" + model + '\'' +
-                ", producer='" + producer + '\'' +
-                ", year='" + year + '\'' +
-                ", value=" + value +
-                '}';
+    public void trunOn() {
+        System.out.println("Auto wlaczone");
     }
 }
