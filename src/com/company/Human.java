@@ -10,10 +10,11 @@ import java.util.Date;
 public class Human {
     public String firstName;
     public String lastName;
-    protected Phone phone;
+    public Phone phone;
     public Animal pet;
     private Car auto;
     private double salary;
+    public double cash;
 
     public void getSalary() {
         DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
@@ -44,6 +45,9 @@ public class Human {
         } else {
             System.out.println("Zmien kredyt wez prace");
         }
+    }
+    public void setBuyedCar(Car newAuto){
+        this.auto = newAuto;
     }
 
     @Override

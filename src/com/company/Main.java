@@ -11,8 +11,22 @@ public class Main {
         typek.lastName = "byku";
         typek.setSalary(22323);
         typek.getSalary();
+        typek.cash = 1000;
 
+        Human typek2 = new Human();
+        typek2.firstName = "Marcin";
+        typek2.lastName = "byku";
+        typek2.setSalary(22323);
+        typek2.cash = 1000;
         Animal dog = new Animal("owczarek");
+        typek.pet = dog;
+
+        Human typek3 = new Human();
+        typek3.firstName = "Maciej";
+        typek3.lastName = "Fnatik";
+        typek3.setSalary(22323);
+        typek3.getSalary();
+        typek3.cash = 1000;
 
         Phone telefon = new Phone();
         telefon.model = "modelA";
@@ -32,16 +46,16 @@ public class Main {
         mercPrim.value = 2138;
 
         typek.setCar(merc);
-        typek.setCar(mercPrim);
+        typek2.setCar(mercPrim);
 
-        mercPrim.trunOn();
-        telefon.trunOn();
 
-        System.out.println(telefon);
-        System.out.println(mercPrim);
-        System.out.println(merc);
-        System.out.println(typek);
-        System.out.println(dog);
+        dog.sell(typek,typek2, (double) 1);
+        dog.sell(typek,typek2, (double) 1);
+        dog.sell(typek2,typek, (double) 10000);
+
+        merc.sell(typek, typek3, (double) 2000000);
+        merc.sell(typek, typek3, (double) 20);
+        merc.sell(typek, typek3, (double) 20);
 
 
     }

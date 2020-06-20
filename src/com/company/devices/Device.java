@@ -1,6 +1,8 @@
 package com.company.devices;
 
-public abstract class Device {
+import com.company.sellable;
+
+public abstract class Device implements sellable {
     public String producer;
     public String model;
     public String yearOfProduction;
@@ -14,4 +16,5 @@ public abstract class Device {
                 '}';
     }
     public abstract void trunOn();
+
 }
