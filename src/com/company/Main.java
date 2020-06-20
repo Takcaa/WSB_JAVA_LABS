@@ -1,5 +1,8 @@
 package com.company;
 
+import com.company.creatures.Animal;
+import com.company.creatures.FarmAnimal;
+import com.company.creatures.Pet;
 import com.company.devices.Car;
 import com.company.devices.Phone;
 
@@ -18,7 +21,8 @@ public class Main {
         typek2.lastName = "byku";
         typek2.setSalary(22323);
         typek2.cash = 1000;
-        Animal dog = new Animal("owczarek");
+        FarmAnimal dog = new FarmAnimal("owczarek");
+        dog.name = "Kiez";
         typek.pet = dog;
 
         Human typek3 = new Human();
@@ -48,14 +52,22 @@ public class Main {
         typek.setCar(merc);
         typek2.setCar(mercPrim);
 
+        Pet cat= new Pet("Dachowiec");
 
         dog.sell(typek,typek2, (double) 1);
         dog.sell(typek,typek2, (double) 1);
         dog.sell(typek2,typek, (double) 10000);
-
-        merc.sell(typek, typek3, (double) 2000000);
-        merc.sell(typek, typek3, (double) 20);
-        merc.sell(typek, typek3, (double) 20);
+        dog.feed(); dog.feed(); dog.feed();
+        dog.feed(1);
+        dog.beEaten();
+        dog.takeForAWalk(); dog.takeForAWalk(); dog.takeForAWalk();
+        dog.takeForAWalk(); dog.takeForAWalk(); dog.takeForAWalk();
+        dog.takeForAWalk(); dog.takeForAWalk(); dog.takeForAWalk();
+        dog.takeForAWalk(); dog.takeForAWalk(); dog.takeForAWalk();
+        dog.takeForAWalk(); dog.takeForAWalk(); dog.takeForAWalk();
+        dog.takeForAWalk(); dog.takeForAWalk(); dog.takeForAWalk();
+        dog.feed(); dog.feed(1);
+        cat.feed();
 
 
     }

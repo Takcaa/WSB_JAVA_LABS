@@ -1,10 +1,13 @@
-package com.company;
+package com.company.creatures;
+
+import com.company.Human;
+import com.company.sellable;
 
 import java.io.File;
 
-public class Animal implements sellable {
+public abstract class Animal implements sellable, Feedable {
     final String species;
-    private Double weight;
+    protected Double weight;
     public String name;
     public File pic;
 
@@ -22,6 +25,14 @@ public class Animal implements sellable {
     public void feed() {
         if (this.weight > 0) {
             this.weight += 0.1;
+        } else {
+            System.out.println("Nie nakarmisz zdechlego psa");
+        }
+
+    }
+    public void feed(double foodWeight) {
+        if (this.weight > 0) {
+            this.weight += foodWeight/2;
         } else {
             System.out.println("Nie nakarmisz zdechlego psa");
         }
