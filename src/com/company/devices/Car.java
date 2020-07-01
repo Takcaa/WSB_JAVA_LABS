@@ -2,7 +2,7 @@ package com.company.devices;
 
 import com.company.Human;
 
-public class Car extends Device {
+public abstract class Car extends Device {
     public double value;
 
 
@@ -27,4 +27,5 @@ public class Car extends Device {
             System.out.println("Te auto nie nalezy do ciebie.");
         }
     }
+    abstract void refuel();
 }

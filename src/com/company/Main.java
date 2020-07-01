@@ -4,11 +4,16 @@ import com.company.creatures.Animal;
 import com.company.creatures.FarmAnimal;
 import com.company.creatures.Pet;
 import com.company.devices.Car;
+import com.company.devices.Disel;
+import com.company.devices.Electric;
 import com.company.devices.Phone;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MalformedURLException {
         Human typek = new Human();
         typek.firstName = "Marcin";
         typek.lastName = "byku";
@@ -37,13 +42,13 @@ public class Main {
         telefon.producer = "Apple";
         telefon.yearOfProduction = "2001";
 
-        Car merc = new Car();
+        Car merc = new Disel();
         merc.model = "AMG111";
         merc.producer = "Mercedes";
         merc.yearOfProduction = "2012";
         merc.value = 2138;
 
-        Car mercPrim = new Car();
+        Car mercPrim = new Electric();
         mercPrim.model = "AMG";
         mercPrim.producer = "Mercedes";
         mercPrim.yearOfProduction = "2012";
@@ -52,23 +57,11 @@ public class Main {
         typek.setCar(merc);
         typek2.setCar(mercPrim);
 
-        Pet cat= new Pet("Dachowiec");
-
-        dog.sell(typek,typek2, (double) 1);
-        dog.sell(typek,typek2, (double) 1);
-        dog.sell(typek2,typek, (double) 10000);
-        dog.feed(); dog.feed(); dog.feed();
-        dog.feed(1);
-        dog.beEaten();
-        dog.takeForAWalk(); dog.takeForAWalk(); dog.takeForAWalk();
-        dog.takeForAWalk(); dog.takeForAWalk(); dog.takeForAWalk();
-        dog.takeForAWalk(); dog.takeForAWalk(); dog.takeForAWalk();
-        dog.takeForAWalk(); dog.takeForAWalk(); dog.takeForAWalk();
-        dog.takeForAWalk(); dog.takeForAWalk(); dog.takeForAWalk();
-        dog.takeForAWalk(); dog.takeForAWalk(); dog.takeForAWalk();
-        dog.feed(); dog.feed(1);
-        cat.feed();
-
-
+        Pet cat = new Pet("Dachowiec");
+        URL myURL = new URL("http://example.com/");
+        telefon.installAnnApp(myURL);
+        telefon.installAnnApp("ABC");
+        telefon.installAnnApp("abc", 3);
+        telefon.installAnnApp("asd", 2, "xzczczc");
     }
 }
