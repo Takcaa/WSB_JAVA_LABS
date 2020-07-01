@@ -5,7 +5,7 @@ import com.company.sellable;
 public abstract class Device implements sellable {
     public String producer;
     public String model;
-    public String yearOfProduction;
+    public double yearOfProduction;
 
     @Override
     public String toString() {

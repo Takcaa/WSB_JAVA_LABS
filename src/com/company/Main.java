@@ -13,7 +13,7 @@ import java.net.URL;
 
 public class Main {
 
-    public static void main(String[] args) throws MalformedURLException {
+    public static void main(String[] args) throws Exception {
         Human typek = new Human();
         typek.firstName = "Marcin";
         typek.lastName = "byku";
@@ -40,22 +40,22 @@ public class Main {
         Phone telefon = new Phone();
         telefon.model = "modelA";
         telefon.producer = "Apple";
-        telefon.yearOfProduction = "2001";
+        telefon.yearOfProduction = 2001;
 
         Car merc = new Disel();
         merc.model = "AMG111";
         merc.producer = "Mercedes";
-        merc.yearOfProduction = "2012";
+        merc.yearOfProduction = 3333;
         merc.value = 2138;
 
         Car mercPrim = new Electric();
         mercPrim.model = "AMG";
         mercPrim.producer = "Mercedes";
-        mercPrim.yearOfProduction = "2012";
+        mercPrim.yearOfProduction = 2013;
         mercPrim.value = 2138;
 
-        typek.setCar(merc);
-        typek2.setCar(mercPrim);
+        typek.setCar(merc, 0);
+        typek.setCar(mercPrim, 1);
 
         Pet cat = new Pet("Dachowiec");
         URL myURL = new URL("http://example.com/");
@@ -63,5 +63,17 @@ public class Main {
         telefon.installAnnApp("ABC");
         telefon.installAnnApp("abc", 3);
         telefon.installAnnApp("asd", 2, "xzczczc");
+        System.out.println();
+        System.out.println(typek.getCar(0));
+        System.out.println(typek.getCar(1));
+        // typek.getCar(1).toString();
+        System.out.println(typek.garageValue());
+        typek.garageSort();
+        System.out.println(typek.getCar(0));
+        System.out.println(typek.getCar(1));
+        merc.sell(typek, typek2, 10.0);
+        merc.sell(typek2, typek, 10.0);
+        merc.sell(typek2, typek, 10.0);
+
     }
 }
