@@ -3,10 +3,7 @@ package com.company;
 import com.company.creatures.Animal;
 import com.company.creatures.FarmAnimal;
 import com.company.creatures.Pet;
-import com.company.devices.Car;
-import com.company.devices.Disel;
-import com.company.devices.Electric;
-import com.company.devices.Phone;
+import com.company.devices.*;
 
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -37,11 +34,6 @@ public class Main {
         typek3.getSalary();
         typek3.cash = 1000;
 
-        Phone telefon = new Phone();
-        telefon.model = "modelA";
-        telefon.producer = "Apple";
-        telefon.yearOfProduction = 2001;
-
         Car merc = new Disel();
         merc.model = "AMG111";
         merc.producer = "Mercedes";
@@ -59,10 +51,6 @@ public class Main {
 
         Pet cat = new Pet("Dachowiec");
         URL myURL = new URL("http://example.com/");
-        telefon.installAnnApp(myURL);
-        telefon.installAnnApp("ABC");
-        telefon.installAnnApp("abc", 3);
-        telefon.installAnnApp("asd", 2, "xzczczc");
         System.out.println();
         System.out.println(typek.getCar(0));
         System.out.println(typek.getCar(1));
@@ -80,6 +68,37 @@ public class Main {
         //merc.sell(typek2, typek, 10.0);
         System.out.println("check sold a to b:" + merc.checkIfAsoldToB(typek2, typek));
         System.out.println("Liczba transakcji auta " + merc.model + " " + merc.nmbOfTransactions());
+
+        Phone telefon = new Phone();
+        telefon.model = "modelA";
+        telefon.producer = "Apple";
+        telefon.yearOfProduction = 2001;
+
+        Application apk1 = new Application("opera", 20.0, 1.0);
+        Application apk2 = new Application("anki", 0, 1.0);
+        Application apk3 = new Application("zyzy", 0, 1.0);
+        Application apk4 = new Application("baka", 5.0, 1.3);
+
+        typek.phone = telefon;
+        telefon.installAnnApp(typek,apk1);
+        telefon.installAnnApp(typek,apk2);
+        telefon.installAnnApp(typek,apk3);
+        telefon.installAnnApp(typek,apk4);
+
+        System.out.println("check if instaled opera : " +
+                telefon.checkIfInstaled("opera"));
+        System.out.println("check if instaled apk1: " + telefon.checkIfInstaled(apk1));
+
+        telefon.allApps();
+        System.out.println(telefon.costOfApps());
+        telefon.allFreeApps();
+
+
+
+
+
+
+
 
 
     }

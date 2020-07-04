@@ -4,8 +4,10 @@ import com.company.Human;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.*;
 
 public class Phone extends Device {
+    public Set<Application> apps = new TreeSet<Application>();
     String screenSize;
     String os;
     static final String address = "xyz.com";
@@ -34,24 +36,58 @@ public class Phone extends Device {
         }
     }
 
-    public void installAnnApp(String appName) {
-        System.out.printf("Instalacja aplikacji o nazwie %s", appName);
+    public void installAnnApp(Human owner, Application newApp) {
+        if (owner.cash > newApp.getPrice()) {
+            apps.add(newApp);
+            owner.cash -= newApp.getPrice();
+        }
     }
 
-    public void installAnnApp(String appName, double version) {
-        System.out.printf("Instalacja aplikacji o nazwie %s w wersji: %f", appName, version);
+    public boolean checkIfInstaled(Application app) {
+        return apps.contains(app);
     }
 
-    public void installAnnApp(String appName, double version, String address) {
-        System.out.printf("Instalacja aplikacji o nazwie %s w wersji: %f z adresem: %s"
-                , appName, version, address);
+    public boolean checkIfInstaled(String app) {
+        for (Application a : apps) {
+            if (a.appname == app) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    public void installAnnApp(String[] appNameList) {
-        System.out.printf("Instalacja aplikacji o nazwie %s", appNameList.toString());
+    public void allFreeApps() {
+        for (Application a : apps) {
+            if (a.getPrice() <= 0) {
+                System.out.println(a.appname);
+            }
+        }
+    }
+    public double costOfApps() {
+        double cost = 0;
+        for (Application a : apps) {
+            cost+= a.getPrice();
+        }
+        return cost;
+    }
+    public void allApps() {
+        Comparator<Application> alphApps = new Comparator<Application>() {
+            @Override
+            public int compare(Application o1, Application o2) {
+                if(o1.appname.compareTo(o2.appname) >0)
+                    return 1;
+                if(o1.appname.compareTo(o2.appname) <0)
+                    return  -1;
+                return 0;
+            }
+        };
+        List<Application> arr = new ArrayList<Application>();
+        arr.addAll(apps);
+        Collections.sort(arr, alphApps);
+        for (Application a : arr){
+            System.out.println(a.appname);
+        }
     }
 
-    public void installAnnApp(URL appAddres) {
-        System.out.printf("Instalacja aplikacji z adresu %s", appAddres.toString());
-    }
+
 }
