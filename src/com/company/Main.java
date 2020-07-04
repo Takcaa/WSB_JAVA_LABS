@@ -71,9 +71,16 @@ public class Main {
         typek.garageSort();
         System.out.println(typek.getCar(0));
         System.out.println(typek.getCar(1));
+        System.out.println("Liczba transakcji auta " + merc.model + " " + merc.nmbOfTransactions());
+        System.out.println("check if was owner:" + merc.checkIfWasOwner(typek2));
+        System.out.println("check sold a to b:" + merc.checkIfAsoldToB(typek, typek2));
         merc.sell(typek, typek2, 10.0);
-        merc.sell(typek2, typek, 10.0);
-        merc.sell(typek2, typek, 10.0);
+        System.out.println("check if was owner:" + merc.checkIfWasOwner(typek2));
+        System.out.println("check if was owner:" + merc.checkIfWasOwner(typek));
+        //merc.sell(typek2, typek, 10.0);
+        System.out.println("check sold a to b:" + merc.checkIfAsoldToB(typek2, typek));
+        System.out.println("Liczba transakcji auta " + merc.model + " " + merc.nmbOfTransactions());
+
 
     }
 }

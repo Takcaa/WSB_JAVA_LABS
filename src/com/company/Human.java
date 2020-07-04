@@ -46,16 +46,20 @@ public class Human {
         if (salary > newAuto.value) {
             System.out.println("Za gotowke bogaczu");
             this.garage[id] = newAuto;
+            newAuto.owners.add(this);
         } else if (salary > newAuto.value / 12) {
             System.out.println("Kredycik na garage");
             this.garage[id] = newAuto;
+            newAuto.owners.add(this);
         } else {
             System.out.println("Zmien kredyt wez prace");
         }
     }
 
     public void setBuyedCar(Car newAuto, int id) {
+
         this.garage[id] = newAuto;
+        newAuto.owners.add(this);
     }
 
     public double garageValue() {
@@ -116,6 +120,5 @@ public class Human {
         }
     }
 
-    public void addCar(Car car) {
-    }
+
 }

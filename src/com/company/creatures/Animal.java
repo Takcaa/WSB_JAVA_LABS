@@ -30,9 +30,10 @@ public abstract class Animal implements sellable, Feedable {
         }
 
     }
+
     public void feed(double foodWeight) {
         if (this.weight > 0) {
-            this.weight += foodWeight/2;
+            this.weight += foodWeight / 2;
         } else {
             System.out.println("Nie nakarmisz zdechlego psa");
         }

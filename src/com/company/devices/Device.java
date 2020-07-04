@@ -15,6 +15,7 @@ public abstract class Device implements sellable {
                 ", yearOfProduction='" + yearOfProduction + '\'' +
                 '}';
     }
+
     public abstract void trunOn();
 
 }
